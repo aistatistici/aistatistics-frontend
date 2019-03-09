@@ -64,8 +64,8 @@ typings/
 
 # compiled output
 frontend/dist/
-fronted/tmp/
+frontend/tmp/
 frontend/out-tsc/
 
 # dependencies
-frontend/node_modules
+frontend/node_modules/
