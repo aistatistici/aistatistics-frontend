@@ -16,21 +16,25 @@ import {
     MatListModule,
     MatMenuModule,
     MatProgressBarModule,
+    MatRippleModule,
     MatSelectModule,
     MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
     MatSnackBarModule,
     MatTableModule,
-    MatRippleModule,
     MatToolbarModule,
     MatTooltipModule,
     MatSlideToggleModule,
-    MatSliderModule
+    MatSliderModule,
 } from '@angular/material';
 import {NavBarComponent} from './common/nav-bar/nav-bar.component';
 import {FooterComponent} from './common/footer/footer.component';
 import {MainComponent} from './pages/main/main.component';
 import {HttpClientModule} from '@angular/common/http';
 import {UploadFileService} from './shared/upload-file.service';
+import {LabelsComponent} from './pages/labels/labels.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -38,7 +42,8 @@ import {UploadFileService} from './shared/upload-file.service';
         AppComponent,
         NavBarComponent,
         FooterComponent,
-        MainComponent
+        MainComponent,
+        LabelsComponent
     ],
     imports: [
         BrowserModule,
@@ -64,7 +69,9 @@ import {UploadFileService} from './shared/upload-file.service';
         MatTooltipModule,
         MatSlideToggleModule,
         MatSliderModule,
-        HttpClientModule
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     providers: [UploadFileService],
     bootstrap: [AppComponent]
