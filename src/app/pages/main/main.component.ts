@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadFileService} from '../../shared/upload-file.service';
-
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-main',
@@ -12,7 +12,8 @@ export class MainComponent implements OnInit {
     public title = 'Upload your data here'
 
 
-    constructor(private uploadFileService: UploadFileService) {
+    constructor(private uploadFileService: UploadFileService,
+                private router: Router) {
     }
 
     ngOnInit() {
@@ -26,7 +27,12 @@ export class MainComponent implements OnInit {
     }
 
     onUpload() {
-       this.uploadFileService.sendFile(this.selectedFile);
+        this.uploadFileService.sendFile(this.selectedFile).then((response) => {
+            console.log(response);
+            if(response === 'Done'){
+                this.router.navigateByUrl('/labels');
+            }
+        });
 
     }
 
