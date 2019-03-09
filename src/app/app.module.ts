@@ -24,9 +24,7 @@ import {
     MatSnackBarModule,
     MatTableModule,
     MatToolbarModule,
-    MatTooltipModule,
-    MatSlideToggleModule,
-    MatSliderModule,
+    MatTooltipModule
 } from '@angular/material';
 import {NavBarComponent} from './common/nav-bar/nav-bar.component';
 import {FooterComponent} from './common/footer/footer.component';
