@@ -30,7 +30,7 @@ export class MainComponent implements OnInit {
         this.uploadFileService.sendFile(this.selectedFile).then((response) => {
             console.log(response);
             if(response === 'Done'){
-                this.router.navigateByUrl('/labels');
+                this.router.navigateByUrl('/graph');
             }
         });
 
