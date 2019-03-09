@@ -30,7 +30,7 @@ import {NavBarComponent} from './common/nav-bar/nav-bar.component';
 import {FooterComponent} from './common/footer/footer.component';
 import {MainComponent} from './pages/main/main.component';
 import {HttpClientModule} from '@angular/common/http';
-import {UploadFileService} from './shared/upload-file.service';
+import {FileService} from './shared/file.service';
 import {LabelsComponent} from './pages/labels/labels.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {GraphComponent} from './pages/graph/graph.component';
@@ -77,7 +77,7 @@ import {ChartsModule} from "ng2-charts";
         BrowserModule,
         ChartsModule
     ],
-    providers: [UploadFileService],
+    providers: [FileService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
