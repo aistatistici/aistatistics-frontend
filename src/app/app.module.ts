@@ -26,11 +26,17 @@ import {
   MatSlideToggleModule,
   MatSliderModule
 } from '@angular/material';
+import { NavBarComponent } from './common/nav-bar/nav-bar.component';
+import { FooterComponent } from './common/footer/footer.component';
+import { MainComponent } from './pages/main/main.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent,
+    FooterComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
