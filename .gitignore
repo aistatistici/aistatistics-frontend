@@ -61,3 +61,11 @@ typings/
 .next
 
 .idea
+
+# compiled output
+frontend/dist/
+fronted/tmp/
+frontend/out-tsc/
+
+# dependencies
+frontend/node_modules
