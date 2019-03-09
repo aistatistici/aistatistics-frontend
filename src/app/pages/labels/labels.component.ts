@@ -9,11 +9,13 @@ import {FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 export class LabelsComponent implements OnInit {
     form: FormGroup;
+
     orders = [
         {id: 100, name: 'order 1'},
         {id: 200, name: 'order 2'},
         {id: 300, name: 'order 3'},
-        {id: 400, name: 'order 4'}
+        {id: 400, name: 'order 4'},
+        {id: 500, name: 'order 5'}
     ];
 
     constructor(private formBuilder: FormBuilder) {
@@ -33,8 +35,8 @@ export class LabelsComponent implements OnInit {
     }
 
     private addCheckboxes() {
-        this.orders.map((o, i) => {
-            const control = new FormControl(i === 0); // if first item set to true, else false
+        this.orders.map(() => {
+            const control = new FormControl(false);
             (this.form.controls.orders as FormArray).push(control);
         });
     }
