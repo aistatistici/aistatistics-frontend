@@ -14,6 +14,7 @@ export class MainComponent implements OnInit {
 
     constructor(private fileService: FileService,
                 private router: Router) {
+
     }
 
     ngOnInit() {

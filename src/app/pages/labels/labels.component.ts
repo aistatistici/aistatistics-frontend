@@ -1,5 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {SplitFormComponent} from "./split-form/split-form.component";
+
+export interface Food {
+    value: string;
+    viewValue: string;
+}
 
 @Component({
     selector: 'app-labels',
@@ -9,6 +15,14 @@ import {FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 export class LabelsComponent implements OnInit {
     form: FormGroup;
+    public value: string;
+    @ViewChild(SplitFormComponent) formSplit: SplitFormComponent;
+
+    foods: Food[] = [
+        {value: 'rev-0', viewValue: 'Reverse'},
+        {value: 't-1', viewValue: 'T1'},
+        {value: 't-2', viewValue: 'T2'}
+    ];
 
     orders = [
         {id: 100, name: 'order 1'},
@@ -20,14 +34,15 @@ export class LabelsComponent implements OnInit {
 
     constructor(private formBuilder: FormBuilder) {
         this.form = this.formBuilder.group({
-            orders: new FormArray([])
+            orders: new FormArray([]),
         });
 
         this.addCheckboxes();
     }
 
     submit() {
-        console.log(this.form.value);
+        console.log(this.form.value.orders);
+        console.log(this.formSplit.getValue())
     }
 
     ngOnInit() {
