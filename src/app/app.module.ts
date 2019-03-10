@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
+import { ChartsModule } from 'ng2-charts';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -33,6 +33,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {FileService} from './shared/file.service';
 import {LabelsComponent} from './pages/labels/labels.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {GraphComponent} from './pages/graph/graph.component';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -41,7 +43,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         NavBarComponent,
         FooterComponent,
         MainComponent,
-        LabelsComponent
+        LabelsComponent,
+        GraphComponent
     ],
     imports: [
         BrowserModule,
@@ -69,7 +72,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         MatSliderModule,
         HttpClientModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        BrowserModule,
+        ChartsModule
     ],
     providers: [FileService],
     bootstrap: [AppComponent]

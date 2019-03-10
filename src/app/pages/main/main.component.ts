@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FileService} from '../../shared/file.service';
 import {Router} from '@angular/router';
-import {parseJson} from "@angular-devkit/core";
 
 @Component({
     selector: 'app-main',
@@ -11,8 +10,8 @@ import {parseJson} from "@angular-devkit/core";
 export class MainComponent implements OnInit {
     public selectedFile: File = null;
     public fileName = '';
-    // public labels = ''
-    public title = 'Upload your data here'
+    public dateFormat;
+    public title = 'Upload your data here';
 
 
     constructor(private fileService: FileService,
@@ -31,11 +30,17 @@ export class MainComponent implements OnInit {
 
     onUpload() {
         // console.log(parseJson(this.labels));
-        this.fileService.sendFile(this.selectedFile, this.fileName).then((response) => {
+        if (this.dateFormat == null || this.dateFormat === undefined || this.dateFormat === '') {
+            this.dateFormat = undefined;
+        } else {
+            this.dateFormat = JSON.parse(this.dateFormat);
+        }
+        this.fileService.sendFile(this.selectedFile, this.fileName,
+            this.dateFormat).then((response) => {
             console.log(response);
-            this.fileService.getDataFilesByID(response).then((data) => {
-                console.log(data);
-            });
+            if (response) {
+                this.router.navigateByUrl('/graph/' + response);
+            }
         });
 
     }

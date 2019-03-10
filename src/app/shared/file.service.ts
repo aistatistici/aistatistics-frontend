@@ -11,7 +11,7 @@ export class FileService {
     }
 
 
-    sendFile(filePath, fileName) {
+    sendFile(filePath, fileName, dateFormat) {
         console.log(filePath);
         console.log(fileName);
 
@@ -19,6 +19,7 @@ export class FileService {
         const formData = new FormData();
         formData.append('name', fileName);
         formData.append('file', filePath);
+        formData.append('date_fields', dateFormat);
         return this.http.post(url, formData).toPromise();
     }
 
