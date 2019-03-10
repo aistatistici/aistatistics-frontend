@@ -22,7 +22,7 @@ export class SplitFormComponent implements OnInit {
 
     getValue() {
         return Object.entries(this.inputMap).map(([l, v]) => {
-            return [l, v.getValue()]
+            return [l, v.getValue()];
         }).reduce((p, [l, v]) => {
             p[l] = v;
             return p;

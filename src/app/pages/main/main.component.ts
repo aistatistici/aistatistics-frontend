@@ -9,7 +9,9 @@ import {Router} from '@angular/router';
 })
 export class MainComponent implements OnInit {
     public selectedFile: File = null;
-    public title = 'Upload your data here'
+    public fileName = '';
+    public dateFormat;
+    public title = 'Upload your data here';
 
 
     constructor(private fileService: FileService,
@@ -28,10 +30,17 @@ export class MainComponent implements OnInit {
     }
 
     onUpload() {
-        this.fileService.sendFile(this.selectedFile).then((response) => {
+        // console.log(parseJson(this.labels));
+        if (this.dateFormat == null || this.dateFormat === undefined || this.dateFormat === '') {
+            this.dateFormat = undefined;
+        } else {
+            this.dateFormat = JSON.parse(this.dateFormat);
+        }
+        this.fileService.sendFile(this.selectedFile, this.fileName,
+            this.dateFormat).then((response) => {
             console.log(response);
-            if (response === 'Done') {
-                this.router.navigateByUrl('/graph');
+            if (response) {
+                this.router.navigateByUrl('/graph/' + response);
             }
         });
 

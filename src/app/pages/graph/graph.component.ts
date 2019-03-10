@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {FileService} from "../../shared/file.service";
 
 @Component({
     selector: 'app-graph',
@@ -6,13 +8,11 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./graph.component.scss']
 })
 export class GraphComponent implements OnInit {
-
-
     public chartOptions = {
         scaleShowVerticalLines: false,
         responsive: true
     };
-    public chartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+    public chartLabels = ['2010-01-01', '2007', '2008', '2009', '2010', '2011', '2012'];
     public chartType = 'line';
     public chartLegend = true;
     public chartData = [
@@ -27,16 +27,25 @@ export class GraphComponent implements OnInit {
             hidden: true
         },
         {
-            data: [42, 12, 51, 19, 23, 27, 76],
+            data: [42, 12, 51, 19, 23, 27, 76, 35, 78],
             label: 'Series C',
             hidden: true
         }
     ];
 
-    constructor() {
+    public id: number = null;
+    public data;
+
+    constructor(private route: ActivatedRoute, private fileService: FileService) {
     }
 
     ngOnInit() {
-    }
+        this.id = parseInt(this.route.snapshot.paramMap.get('id'), 10);
+        console.log(this.id);
+        this.fileService.getDataFilesByID(this.id).then((data) => {
+            console.log(data);
 
+        });
+
+    }
 }

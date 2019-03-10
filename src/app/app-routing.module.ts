@@ -7,7 +7,7 @@ import {GraphComponent} from "./pages/graph/graph.component";
 const routes: Routes = [
     {path: 'main', component: MainComponent},
     {path: 'labels', component: LabelsComponent},
-    {path: 'graph', component: GraphComponent},
+    {path: 'graph/:id', component: GraphComponent},
     { path: '',
         redirectTo: '/main',
         pathMatch: 'full'
