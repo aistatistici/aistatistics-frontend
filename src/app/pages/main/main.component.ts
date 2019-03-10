@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FileService} from '../../shared/file.service';
 import {Router} from '@angular/router';
+import {parseJson} from "@angular-devkit/core";
 
 @Component({
     selector: 'app-main',
@@ -9,6 +10,8 @@ import {Router} from '@angular/router';
 })
 export class MainComponent implements OnInit {
     public selectedFile: File = null;
+    public fileName = '';
+    // public labels = ''
     public title = 'Upload your data here'
 
 
@@ -27,11 +30,12 @@ export class MainComponent implements OnInit {
     }
 
     onUpload() {
-        this.fileService.sendFile(this.selectedFile).then((response) => {
+        // console.log(parseJson(this.labels));
+        this.fileService.sendFile(this.selectedFile, this.fileName).then((response) => {
             console.log(response);
-            if (response === 'Done') {
-                this.router.navigateByUrl('/labels');
-            }
+            this.fileService.getDataFilesByID(response).then((data) => {
+                console.log(data);
+            });
         });
 
     }

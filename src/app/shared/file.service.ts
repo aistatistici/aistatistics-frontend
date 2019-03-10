@@ -11,17 +11,19 @@ export class FileService {
     }
 
 
-    sendFile(file) {
-        console.log(file);
+    sendFile(filePath, fileName) {
+        console.log(filePath);
+        console.log(fileName);
 
         const url = this.ip + 'api/file/upload-data-document';
         const formData = new FormData();
-        formData.append('file', file);
+        formData.append('name', fileName);
+        formData.append('file', filePath);
         return this.http.post(url, formData).toPromise();
     }
 
     getDataFilesByID(id) {
-        const url = this.ip + 'somewhere/' + id;
+        const url = this.ip + 'api/file/get-dataset/' + id;
         return this.http.get(url).toPromise();
     }
 }
