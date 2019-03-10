@@ -35,6 +35,13 @@ import {LabelsComponent} from './pages/labels/labels.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {GraphComponent} from './pages/graph/graph.component';
 import {RouterModule} from "@angular/router";
+import { SplitFormComponent } from './pages/labels/split-form/split-form.component';
+import { SplitInputComponent } from './pages/labels/split-form/split-input/split-input.component';
+import { CheckboxFormComponent } from './pages/labels/checkbox-form/checkbox-form.component';
+import { CheckboxFieldComponent } from './pages/labels/checkbox-form/checkbox-field/checkbox-field.component';
+import { ListFormComponent } from './pages/labels/list-form/list-form.component';
+import { ListFieldComponent } from './pages/labels/list-form/list-field/list-field.component';
+
 
 
 @NgModule({
@@ -44,7 +51,13 @@ import {RouterModule} from "@angular/router";
         FooterComponent,
         MainComponent,
         LabelsComponent,
-        GraphComponent
+        GraphComponent,
+        SplitFormComponent,
+        SplitInputComponent,
+        CheckboxFormComponent,
+        CheckboxFieldComponent,
+        ListFormComponent,
+        ListFieldComponent
     ],
     imports: [
         BrowserModule,
