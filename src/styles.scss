@@ -2,3 +2,19 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+app-root {
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+    background-color: lightgray;
+  }
+
+
+  min-height: 100vh;
+}
+
+app-checkbox-field, app-process-field, app-split-input {
+  margin-right: 10px  ;
+}

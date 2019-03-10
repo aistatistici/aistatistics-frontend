@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListFieldComponent } from './list-field.component';
+import { ProcessFieldComponent } from './process-field.component';
 
-describe('ListFieldComponent', () => {
-  let component: ListFieldComponent;
-  let fixture: ComponentFixture<ListFieldComponent>;
+describe('ProcessFieldComponent', () => {
+  let component: ProcessFieldComponent;
+  let fixture: ComponentFixture<ProcessFieldComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListFieldComponent ]
+      declarations: [ ProcessFieldComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListFieldComponent);
+    fixture = TestBed.createComponent(ProcessFieldComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

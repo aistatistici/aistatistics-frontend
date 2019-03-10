@@ -1,0 +1,4 @@
+<h2>Process columns:</h2>
+<ng-container *ngFor="let l of labels" >
+    <app-process-field [name]="l" (created)="storeInput(l, $event)"></app-process-field>
+</ng-container>

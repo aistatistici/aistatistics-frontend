@@ -24,7 +24,7 @@ import {
     MatSnackBarModule,
     MatTableModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
 } from '@angular/material';
 import {NavBarComponent} from './common/nav-bar/nav-bar.component';
 import {FooterComponent} from './common/footer/footer.component';
@@ -39,8 +39,9 @@ import { SplitFormComponent } from './pages/labels/split-form/split-form.compone
 import { SplitInputComponent } from './pages/labels/split-form/split-input/split-input.component';
 import { CheckboxFormComponent } from './pages/labels/checkbox-form/checkbox-form.component';
 import { CheckboxFieldComponent } from './pages/labels/checkbox-form/checkbox-field/checkbox-field.component';
-import { ListFormComponent } from './pages/labels/list-form/list-form.component';
-import { ListFieldComponent } from './pages/labels/list-form/list-field/list-field.component';
+import { ProcessFormComponent } from './pages/labels/process-form/process-form.component';
+import { ProcessFieldComponent } from './pages/labels/process-form/process-field/process-field.component';
+import { ImgDialogComponent } from './common/img-dialog/img-dialog.component';
 
 
 
@@ -56,8 +57,9 @@ import { ListFieldComponent } from './pages/labels/list-form/list-field/list-fie
         SplitInputComponent,
         CheckboxFormComponent,
         CheckboxFieldComponent,
-        ListFormComponent,
-        ListFieldComponent
+        ProcessFormComponent,
+        ProcessFieldComponent,
+        ImgDialogComponent
     ],
     imports: [
         BrowserModule,
@@ -90,7 +92,10 @@ import { ListFieldComponent } from './pages/labels/list-form/list-field/list-fie
         ChartsModule
     ],
     providers: [FileService],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    entryComponents: [
+        ImgDialogComponent
+    ]
 })
 export class AppModule {
 }

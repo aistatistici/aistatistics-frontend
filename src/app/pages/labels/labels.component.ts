@@ -1,10 +1,11 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {SplitFormComponent} from "./split-form/split-form.component";
+import {ProcessFormComponent} from "./process-form/process-form.component";
+import {CheckboxFormComponent} from "./checkbox-form/checkbox-form.component";
 
-export interface Food {
-    value: string;
-    viewValue: string;
+function eliminate_undef(obj: any) {
+    Object.keys(obj).forEach(key => obj[key] === undefined && delete obj[key])
+    return obj;
 }
 
 @Component({
@@ -14,46 +15,24 @@ export interface Food {
 })
 
 export class LabelsComponent implements OnInit {
-    form: FormGroup;
-    public value: string;
+    @Input() labels: string[] = [];
     @ViewChild(SplitFormComponent) formSplit: SplitFormComponent;
-
-    foods: Food[] = [
-        {value: 'rev-0', viewValue: 'Reverse'},
-        {value: 't-1', viewValue: 'T1'},
-        {value: 't-2', viewValue: 'T2'}
-    ];
-
-    orders = [
-        {id: 100, name: 'order 1'},
-        {id: 200, name: 'order 2'},
-        {id: 300, name: 'order 3'},
-        {id: 400, name: 'order 4'},
-        {id: 500, name: 'order 5'}
-    ];
-
-    constructor(private formBuilder: FormBuilder) {
-        this.form = this.formBuilder.group({
-            orders: new FormArray([]),
-        });
-
-        this.addCheckboxes();
-    }
-
-    submit() {
-        console.log(this.form.value.orders);
-        console.log(this.formSplit.getValue())
-    }
+    @ViewChild(ProcessFormComponent) formProcess: ProcessFormComponent;
+    @ViewChild(CheckboxFormComponent) formAugment: CheckboxFormComponent;
+    unique: any;
+    ignore: any[];
 
     ngOnInit() {
 
     }
 
-    private addCheckboxes() {
-        this.orders.map(() => {
-            const control = new FormControl(false);
-            (this.form.controls.orders as FormArray).push(control);
-        });
+    getValue() {
+        return {
+            split: eliminate_undef(this.formSplit.getValue()),
+            process: eliminate_undef(this.formProcess.getValue()),
+            augment: eliminate_undef(this.formAugment.getValue()),
+            unique: this.unique,
+            ignore: this.ignore
+        }
     }
-
 }

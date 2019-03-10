@@ -31,13 +31,14 @@ export class MainComponent implements OnInit {
 
     onUpload() {
         // console.log(parseJson(this.labels));
+        let date = null;
         if (this.dateFormat == null || this.dateFormat === undefined || this.dateFormat === '') {
-            this.dateFormat = undefined;
+            date = undefined;
         } else {
-            this.dateFormat = JSON.parse(this.dateFormat);
+            date = JSON.parse(this.dateFormat);
         }
         this.fileService.sendFile(this.selectedFile, this.fileName,
-            this.dateFormat).then((response) => {
+            date).then((response) => {
             console.log(response);
             if (response) {
                 this.router.navigateByUrl('/graph/' + response);

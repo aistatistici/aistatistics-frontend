@@ -1,1 +1,4 @@
-
+<h2>Augment columns:</h2>
+<ng-container *ngFor="let l of labels">
+    <app-checkbox-field [name]="l" (created)="storeInput(l, $event)"></app-checkbox-field>
+</ng-container>

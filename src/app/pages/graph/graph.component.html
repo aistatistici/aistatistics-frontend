@@ -1,11 +1,73 @@
-<div>
-  <div style="display: block">
-    <canvas baseChart
-            [datasets]="chartData"
-            [labels]="chartLabels"
-            [options]="chartOptions"
-            [legend]="chartLegend"
-            [chartType]="chartType">
-    </canvas>
-  </div>
+<div style="display: flex; flex-direction: column; align-items: center">
+    <mat-card style="max-width: 1000px">
+        <mat-card-content>
+            <div *ngIf="columns">
+                <mat-form-field>
+                    <mat-select [placeholder]="'Select labels field'" [(ngModel)]="label"
+                                (valueChange)="selectValueChanged($event)">
+                        <mat-option *ngFor="let c of columns" [value]="c">
+                            {{c}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div style="display: block" *ngIf="chartData && label && chartOptions">
+                    <canvas baseChart
+                            [datasets]="chartData"
+                            [labels]="chartLabels"
+                            [options]="chartOptions"
+                            [legend]="chartLegend"
+                            [chartType]="chartType"
+                    >
+                    </canvas>
+                </div>
+            </div>
+            <div>
+
+            </div>
+            <app-labels [labels]="columns">
+            </app-labels>
+            <div>
+                <button mat-button (click)="send()" style="background-color: #673ab7; color: white;">Split, process and
+                    augment dataset
+                </button>
+            </div>
+
+            <h2>Train</h2>
+            <mat-form-field style="margin-right: 10px">
+                <mat-select [placeholder]="'Ignore columns'" [multiple]="true" [(ngModel)]="ignore">
+                    <mat-option *ngFor="let option of columns" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field style="margin-right: 10px">
+                <mat-select [placeholder]="'Output columns'" [multiple]="true" [(ngModel)]="output">
+                    <mat-option *ngFor="let option of columns" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field style="margin-right: 10px">
+                <mat-label>{{'Time series lag'}}</mat-label>
+                <input matInput [(ngModel)]="time_series_lag" type="number">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>{{'Epochs'}}</mat-label>
+                <input matInput [(ngModel)]="epochs" type="number">
+            </mat-form-field>
+            <div>
+                <button mat-button (click)="train()" style="background-color: #673ab7; color: white;">Start training
+                </button>
+            </div>
+
+            <ng-container *ngIf="model_path">
+                <h2>Predict</h2>
+                <div>
+                    <button mat-button (click)="predict()" style="background-color: #673ab7; color: white;">Predict
+                    </button>
+                </div>
+            </ng-container>
+
+        </mat-card-content>
+    </mat-card>
 </div>

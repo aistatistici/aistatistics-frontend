@@ -1,14 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {SplitInputComponent} from "./split-input/split-input.component";
+import {ProcessFieldComponent} from "./process-field/process-field.component";
 
 @Component({
-    selector: 'app-split-form',
-    templateUrl: './split-form.component.html',
-    styleUrls: ['./split-form.component.scss']
+    selector: 'app-process-form',
+    templateUrl: './process-form.component.html',
+    styleUrls: ['./process-form.component.scss']
 })
-export class SplitFormComponent implements OnInit {
+export class ProcessFormComponent implements OnInit {
     @Input() labels: string[];
-    private inputMap: Record<string, SplitInputComponent> = {};
+    private inputMap: Record<string, ProcessFieldComponent> = {};
 
     constructor() {
     }
@@ -16,7 +16,7 @@ export class SplitFormComponent implements OnInit {
     ngOnInit() {
     }
 
-    storeInput(l: string, $event: SplitInputComponent) {
+    storeInput(l: string, $event: ProcessFieldComponent) {
         this.inputMap[l] = $event;
     }
 

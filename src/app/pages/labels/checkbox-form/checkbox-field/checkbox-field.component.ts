@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-checkbox-field',
@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkbox-field.component.scss']
 })
 export class CheckboxFieldComponent implements OnInit {
+@Input() name: string;
+    @Output() created = new EventEmitter();
+    checked: boolean;
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.created.emit(this);
+    }
+
+    getValue() {
+        return this.checked;
+    }
 
 }
