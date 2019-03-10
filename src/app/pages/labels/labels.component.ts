@@ -2,11 +2,6 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {SplitFormComponent} from "./split-form/split-form.component";
 
-export interface Food {
-    value: string;
-    viewValue: string;
-}
-
 @Component({
     selector: 'app-labels',
     templateUrl: './labels.component.html',
@@ -18,10 +13,17 @@ export class LabelsComponent implements OnInit {
     public value: string;
     @ViewChild(SplitFormComponent) formSplit: SplitFormComponent;
 
-    foods: Food[] = [
+    foods = [
         {value: 'rev-0', viewValue: 'Reverse'},
         {value: 't-1', viewValue: 'T1'},
         {value: 't-2', viewValue: 'T2'}
+    ];
+
+    labels = [
+        'Date',
+        'Balance',
+        'Type',
+        'Currency'
     ];
 
     orders = [

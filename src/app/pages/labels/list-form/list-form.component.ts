@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-list-form',
-  templateUrl: './list-form.component.html',
-  styleUrls: ['./list-form.component.scss']
+    selector: 'app-list-form',
+    templateUrl: './list-form.component.html',
+    styleUrls: ['./list-form.component.scss']
 })
 export class ListFormComponent implements OnInit {
+    @Input() foods: {}[];
 
-  constructor() { }
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
 
 }

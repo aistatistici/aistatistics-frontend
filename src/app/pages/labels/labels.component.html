@@ -7,15 +7,9 @@
 </form>
 
 <div class="example-container">
-    <app-split-form [labels]="['Date', 'Balance', 'Type']"></app-split-form>
+    <app-split-form [labels]="labels"></app-split-form>
 </div>
 
 <div>
-    <mat-form-field>
-        <mat-select placeholder="Favorite food">
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{food.viewValue}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
+    <app-list-form [foods]="foods"></app-list-form>
 </div>
