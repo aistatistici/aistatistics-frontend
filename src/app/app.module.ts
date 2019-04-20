@@ -25,6 +25,7 @@ import {
     MatTableModule,
     MatToolbarModule,
     MatTooltipModule,
+    MatRadioModule
 } from '@angular/material';
 import {NavBarComponent} from './common/nav-bar/nav-bar.component';
 import {FooterComponent} from './common/footer/footer.component';
@@ -76,6 +77,7 @@ import { CreateProjectComponent } from './pages/project/create-project/create-pr
         AppRoutingModule,
         BrowserAnimationsModule,
         MatButtonModule,
+        MatRadioModule,
         MatCardModule,
         MatCheckboxModule,
         MatDialogModule,
@@ -99,7 +101,7 @@ import { CreateProjectComponent } from './pages/project/create-project/create-pr
         FormsModule,
         ReactiveFormsModule,
         BrowserModule,
-        ChartsModule
+        ChartsModule,
     ],
     providers: [FileService],
     bootstrap: [AppComponent],
