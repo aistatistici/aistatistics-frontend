@@ -25,6 +25,7 @@ import {
     MatTableModule,
     MatToolbarModule,
     MatTooltipModule,
+    MatRadioModule
 } from '@angular/material';
 import {NavBarComponent} from './common/nav-bar/nav-bar.component';
 import {FooterComponent} from './common/footer/footer.component';
@@ -42,6 +43,11 @@ import { CheckboxFieldComponent } from './pages/labels/checkbox-form/checkbox-fi
 import { ProcessFormComponent } from './pages/labels/process-form/process-form.component';
 import { ProcessFieldComponent } from './pages/labels/process-form/process-field/process-field.component';
 import { ImgDialogComponent } from './common/img-dialog/img-dialog.component';
+import { ProjectComponent } from './pages/project/project.component';
+import { ProblemComponent } from './pages/problem/problem.component';
+import { DataComponent } from './pages/data/data.component';
+import { ProjectCardComponent } from './pages/project/project-card/project-card.component';
+import { CreateProjectComponent } from './pages/project/create-project/create-project.component';
 
 
 
@@ -59,13 +65,19 @@ import { ImgDialogComponent } from './common/img-dialog/img-dialog.component';
         CheckboxFieldComponent,
         ProcessFormComponent,
         ProcessFieldComponent,
-        ImgDialogComponent
+        ImgDialogComponent,
+        ProjectComponent,
+        ProblemComponent,
+        DataComponent,
+        ProjectCardComponent,
+        CreateProjectComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         MatButtonModule,
+        MatRadioModule,
         MatCardModule,
         MatCheckboxModule,
         MatDialogModule,
@@ -89,7 +101,7 @@ import { ImgDialogComponent } from './common/img-dialog/img-dialog.component';
         FormsModule,
         ReactiveFormsModule,
         BrowserModule,
-        ChartsModule
+        ChartsModule,
     ],
     providers: [FileService],
     bootstrap: [AppComponent],

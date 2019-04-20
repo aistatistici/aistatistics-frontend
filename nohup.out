@@ -1,0 +1,16 @@
+
+> frontend@0.0.0 start /Users/emanuelcovaci/aistatistics/frontend
+> ng serve
+
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-04-12T15:33:33.942Z
+Hash: e74c99cd634148bb649e
+Time: 22258ms
+chunk {es2015-polyfills} es2015-polyfills.js, es2015-polyfills.js.map (es2015-polyfills) 284 kB [initial] [rendered]
+chunk {main} main.js, main.js.map (main) 88.4 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 236 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 182 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 8.6 MB [initial] [rendered]
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
