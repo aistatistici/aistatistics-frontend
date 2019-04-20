@@ -1,3 +1,10 @@
-<p>
-  project works!
-</p>
+<div class="row">
+    <div class="column left">
+        <div *ngFor="let project of projects">
+            <app-project-card [test]="project"></app-project-card>
+        </div>
+    </div>
+    <div class="column right">
+
+    </div>
+</div>
