@@ -42,6 +42,9 @@ import { CheckboxFieldComponent } from './pages/labels/checkbox-form/checkbox-fi
 import { ProcessFormComponent } from './pages/labels/process-form/process-form.component';
 import { ProcessFieldComponent } from './pages/labels/process-form/process-field/process-field.component';
 import { ImgDialogComponent } from './common/img-dialog/img-dialog.component';
+import { ProjectComponent } from './pages/project/project.component';
+import { ProblemComponent } from './pages/problem/problem.component';
+import { DataComponent } from './pages/data/data.component';
 
 
 
@@ -59,7 +62,10 @@ import { ImgDialogComponent } from './common/img-dialog/img-dialog.component';
         CheckboxFieldComponent,
         ProcessFormComponent,
         ProcessFieldComponent,
-        ImgDialogComponent
+        ImgDialogComponent,
+        ProjectComponent,
+        ProblemComponent,
+        DataComponent
     ],
     imports: [
         BrowserModule,

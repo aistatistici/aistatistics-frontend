@@ -1,27 +1,26 @@
+<div class="example-container">
+    <app-split-form [labels]="labels"></app-split-form>
+</div>
 
-        <div class="example-container">
-            <app-split-form [labels]="labels"></app-split-form>
-        </div>
+<div class="example-container">
+    <app-checkbox-form [labels]="labels"></app-checkbox-form>
+</div>
 
-        <div class="example-container">
-            <app-checkbox-form [labels]="labels"></app-checkbox-form>
-        </div>
-
-        <div class="example-container">
-            <app-process-form [labels]="labels"></app-process-form>
-        </div>
-        <h2>Other column operations</h2>
-        <mat-form-field style="margin-right: 10px">
-            <mat-select [placeholder]="'Unique by'" [(ngModel)]="unique">
-                <mat-option *ngFor="let option of labels" [value]="option">
-                    {{option}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-select [placeholder]="'Ignore columns'" [multiple]="true" [(ngModel)]="ignore">
-                <mat-option *ngFor="let option of labels" [value]="option">
-                    {{option}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+<div class="example-container">
+    <app-process-form [labels]="labels"></app-process-form>
+</div>
+<h2>Other column operations</h2>
+<mat-form-field style="margin-right: 10px">
+    <mat-select [placeholder]="'Unique by'" [(ngModel)]="unique">
+        <mat-option *ngFor="let option of labels" [value]="option">
+            {{option}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <mat-select [placeholder]="'Ignore columns'" [multiple]="true" [(ngModel)]="ignore">
+        <mat-option *ngFor="let option of labels" [value]="option">
+            {{option}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
