@@ -45,6 +45,7 @@ import { ImgDialogComponent } from './common/img-dialog/img-dialog.component';
 import { ProjectComponent } from './pages/project/project.component';
 import { ProblemComponent } from './pages/problem/problem.component';
 import { DataComponent } from './pages/data/data.component';
+import { ProjectCardComponent } from './pages/project/project-card/project-card.component';
 
 
 
@@ -65,7 +66,8 @@ import { DataComponent } from './pages/data/data.component';
         ImgDialogComponent,
         ProjectComponent,
         ProblemComponent,
-        DataComponent
+        DataComponent,
+        ProjectCardComponent
     ],
     imports: [
         BrowserModule,
