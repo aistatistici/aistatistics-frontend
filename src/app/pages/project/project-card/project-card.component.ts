@@ -24,5 +24,4 @@ export class ProjectCardComponent implements OnInit, OnDestroy {
   delete() {
     this.elementRef.nativeElement.remove();
   }
-
 }
