@@ -1,0 +1,9 @@
+.main-div{
+  height: 60vh;
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
