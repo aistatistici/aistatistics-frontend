@@ -9,15 +9,14 @@ export class ProjectCardComponent implements OnInit, OnDestroy {
   @Input() test: any;
 
   public cardTitle: string;
-  public cardSubtitle: string;
+  public cardDescription: string;
 
 
   constructor(private elementRef?: ElementRef) {}
 
   ngOnInit() {
     this.cardTitle = this.test.cardTitle;
-    this.cardSubtitle = this.test.cardSubtitle;
-    console.log(this.test.cardTitle);
+    this.cardDescription = this.test.cardDescription;
   }
   ngOnDestroy(): void {
   }

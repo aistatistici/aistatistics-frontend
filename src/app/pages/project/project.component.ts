@@ -12,28 +12,22 @@ import {MatDialog} from "@angular/material";
 export class ProjectComponent implements OnInit {
     public projects: ProjectCardComponent[] = [];
 
-    constructor(
-        public dialog: MatDialog
-    ) {
-        let myProject1 = new ProjectCardComponent();
-        myProject1.cardTitle = "project 1";
-        myProject1.cardSubtitle = "hahaha";
-        let myProject2 = new ProjectCardComponent();
-        myProject2.cardTitle = "project 2";
-        myProject2.cardSubtitle = "hahaha";
-        let myProject3 = new ProjectCardComponent();
-        myProject3.cardTitle = "project 3";
-        myProject3.cardSubtitle = "hahaha";
-        this.projects.push(myProject1);
-        this.projects.push(myProject2);
-        this.projects.push(myProject3);
+    constructor(public dialog: MatDialog) {
     }
 
     ngOnInit() {
     }
 
     add() {
-        const dialogRef = this.dialog.open(CreateProjectComponent);
-        this.projects.push(new ProjectCardComponent());
+        const dialogRef = this.dialog.open(CreateProjectComponent, {
+            width: '900px',
+            data: {title: '', description: ''}
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            let newCard = new ProjectCardComponent();
+            newCard.cardTitle = result.title;
+            newCard.cardDescription = result.description;
+            this.projects.push(newCard);
+        })
     }
 }
