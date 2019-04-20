@@ -11,7 +11,7 @@ import {DataComponent} from "./pages/data/data.component";
 const routes: Routes = [
     {path: 'data', component: DataComponent},
     {path: 'problem', component: ProblemComponent},
-    {path: 'frontend.src.assets.images.project', component: ProjectComponent},
+    {path: 'project', component: ProjectComponent},
     {path: 'card', component: ProjectCardComponent},
     {path: 'main', component: MainComponent},
     {path: 'labels', component: LabelsComponent},
