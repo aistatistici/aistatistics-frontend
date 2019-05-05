@@ -47,7 +47,7 @@ import { ProjectComponent } from './pages/project/project.component';
 import { ProblemComponent } from './pages/problem/problem.component';
 import { DataComponent } from './pages/data/data.component';
 import { ProjectCardComponent } from './pages/project/project-card/project-card.component';
-import { CreateProjectComponent } from './pages/project/create-project/create-project.component';
+import { ProjectDialogComponent } from './pages/project/project-dialog/project-dialog.component';
 
 
 
@@ -70,7 +70,7 @@ import { CreateProjectComponent } from './pages/project/create-project/create-pr
         ProblemComponent,
         DataComponent,
         ProjectCardComponent,
-        CreateProjectComponent
+        ProjectDialogComponent
     ],
     imports: [
         BrowserModule,

@@ -1,19 +1,17 @@
-<div class="row">
-    <div class="column left">
-        <div *ngFor="let project of projects">
-            <app-project-card [test]="project"></app-project-card>
-        </div>
+<div class="container">
+  <div class="column" id="project-list">
+    <app-project-card *ngFor="let project of projects" [project]="project" (delete)="onDeleteProject($event)"
+                      class="project-item"></app-project-card>
+    <div class="project-item" id="project-add">
+      <mat-card class="create-properties">
+        <mat-card-content>
+          <div class="row justify-content-center align-items-center">
+            <button (click)="add()" mat-button>
+              <mat-icon>add_box</mat-icon>
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
     </div>
-    <div class="column right">
-        <mat-card class="create-properties">
-            <mat-card-header>
-                <mat-card-title>Create new project</mat-card-title>
-                <mat-card-actions align="start">
-                    <button (click)="add()" mat-button>
-                        <mat-icon>add_box</mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card-header>
-        </mat-card>
-    </div>
+  </div>
 </div>

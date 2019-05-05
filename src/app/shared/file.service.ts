@@ -17,7 +17,7 @@ export class FileService {
 
         const url = this.ip + 'api/file/upload-data-document';
         const formData = new FormData();
-        formData.append('name', fileName);
+        formData.append('title', fileName);
         formData.append('file', filePath);
         formData.append('date_fields', dateFormat);
         return this.http.post(url, formData).toPromise();

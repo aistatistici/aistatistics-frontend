@@ -18,3 +18,29 @@ app-root {
 app-checkbox-field, app-process-field, app-split-input {
   margin-right: 10px  ;
 }
+
+.row {
+  display: flex;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@each $i in (flex-start, flex-end, space-between, space-around, space-evenly, center) {
+  .justify-content-#{$i} {
+    justify-content: $i;
+  }
+}
+
+@each $i in (flex-start, flex-end, stretch, center, baseline) {
+  .align-items-#{$i} {
+    align-items: $i;
+  }
+}

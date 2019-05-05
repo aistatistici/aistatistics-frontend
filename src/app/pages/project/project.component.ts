@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ProjectCardComponent} from "./project-card/project-card.component";
-import {CreateProjectComponent} from "./create-project/create-project.component";
+import {ProjectDialogComponent} from "./project-dialog/project-dialog.component";
 import {MatDialog} from "@angular/material";
+import { Project } from "../../shared/project.service";
 
 @Component({
     selector: 'app-project',
@@ -10,7 +10,7 @@ import {MatDialog} from "@angular/material";
 })
 
 export class ProjectComponent implements OnInit {
-    public projects: ProjectCardComponent[] = [];
+    public projects: Project[] = [];
 
     constructor(public dialog: MatDialog) {
     }
@@ -19,14 +19,18 @@ export class ProjectComponent implements OnInit {
     }
 
     add() {
-        const dialogRef = this.dialog.open(CreateProjectComponent, {
+        const dialogRef = this.dialog.open(ProjectDialogComponent, {
             data: {title: '', description: ''}
         });
         dialogRef.afterClosed().subscribe(result => {
-            let newCard = new ProjectCardComponent();
-            newCard.cardTitle = result.title;
-            newCard.cardDescription = result.description;
-            this.projects.push(newCard);
-        })
+            this.projects.push({
+                title: result.title,
+                description: result.description
+            });
+        });
+    }
+
+    onDeleteProject(project: Project) {
+
     }
 }

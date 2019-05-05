@@ -7,10 +7,10 @@ import {ProjectCardComponent} from "./pages/project/project-card/project-card.co
 import {ProjectComponent} from "./pages/project/project.component";
 import {ProblemComponent} from "./pages/problem/problem.component";
 import {DataComponent} from "./pages/data/data.component";
-import {CreateProjectComponent} from "./pages/project/create-project/create-project.component";
+import {ProjectDialogComponent} from "./pages/project/project-dialog/project-dialog.component";
 
 const routes: Routes = [
-    {path: 'create', component: CreateProjectComponent},
+    {path: 'create', component: ProjectDialogComponent},
     {path: 'data', component: DataComponent},
     {path: 'problem', component: ProblemComponent},
     {path: 'project', component: ProjectComponent},
