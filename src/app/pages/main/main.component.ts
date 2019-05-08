@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FileService} from '../../shared/file.service';
-import {Router} from '@angular/router';
 
 @Component({
-    selector: 'app-main',
+    selector: 'as-main',
     templateUrl: './main.component.html',
     styleUrls: ['./main.component.scss']
 })

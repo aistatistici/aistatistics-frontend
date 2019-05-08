@@ -1,0 +1,17 @@
+@mixin as-footer($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  as-footer {
+    background: mat-color($primary);
+    color: mat-color($primary, default-contrast);
+    > div {
+      height: 35px;
+
+      img {
+        height: 100%;
+        max-width: 100px;
+      }
+    }
+
+  }
+}

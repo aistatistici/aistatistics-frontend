@@ -10,8 +10,12 @@
     "component-selector": [
       true,
       "element",
-      "app",
+      "as",
       "kebab-case"
+    ],
+    "variable-name": [
+      true,
+      "allow-leading-underscore"
     ]
   }
 }

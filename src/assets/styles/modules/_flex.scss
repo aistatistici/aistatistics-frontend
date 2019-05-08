@@ -1,0 +1,48 @@
+@mixin flex($mode, $reverse: null) {
+  display: flex;
+  @if $reverse {
+    flex-direction: #{$mode}-reverse;
+  } @else {
+    flex-direction: #{$mode};
+  }
+}
+
+@mixin flex-justify-content($mode) {
+  justify-content: $mode;
+}
+
+@mixin flex-align-items($mode) {
+  align-items: $mode;
+}
+
+@mixin flex-divider {
+  flex-grow: 1;
+}
+
+@mixin flex-styles {
+  @each $i in (row, column) {
+    [flex=#{$i}] {
+      @include flex($i);
+    }
+
+    [flex=#{$i}][flex-reverse] {
+      @include flex($i, true);
+    }
+  }
+
+  @each $i in (flex-start, flex-end, space-between, space-around, space-evenly, center) {
+    [flex-justify=#{$i}] {
+      @include flex-justify-content($i);
+    }
+  }
+
+  @each $i in (flex-start, flex-end, stretch, center, baseline) {
+    [flex-align=#{$i}] {
+      @include flex-align-items($i);
+    }
+  }
+
+  [flex-divider] {
+    @include flex-divider;
+  }
+}

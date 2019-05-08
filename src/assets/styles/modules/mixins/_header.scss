@@ -1,0 +1,40 @@
+@mixin as-header($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  $nav-height: 50px;
+  $sidenav-width: 50px;
+  $sidenav-width-open: 200px;
+
+  as-header {
+    flex-grow: 1;
+    @include flex(column);
+
+    > nav {
+      background: mat-color($primary);
+      color: mat-color($primary, default-contrast);
+
+      > .as-logo {
+        width: $sidenav-width;
+        height: $nav-height;
+        background: white;
+        padding: 5px;
+        box-sizing: border-box;
+        > img {
+          width: 100%;
+        }
+      }
+    }
+
+    > div {
+      flex-grow: 1;
+      overflow: auto;
+      > .as-sidenav {
+        flex-shrink: 0;
+        background: mat-color($primary, lighter);
+        color: mat-color($primary, lighter-contrast);
+      }
+    }
+
+  }
+}

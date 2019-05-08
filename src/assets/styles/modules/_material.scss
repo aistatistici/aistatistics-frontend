@@ -1,0 +1,81 @@
+@import '~@angular/material/theming';
+@import "flex";
+@import "mixins";
+
+@include mat-core();
+
+$primary: (
+  50 : #f0e8f3,
+  100 : #d8c5e0,
+  200 : #bf9ecb,
+  300 : #a577b6,
+  400 : #915aa7,
+  500 : #7e3d97,
+  600 : #76378f,
+  700 : #6b2f84,
+  800 : #61277a,
+  900 : #4e1a69,
+  A100 : #dea4ff,
+  A200 : #cc71ff,
+  A400 : #ba3eff,
+  A700 : #b025ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$accent: (
+  50 : #fff4ea,
+  100 : #fee4ca,
+  200 : #fdd3a7,
+  300 : #fcc183,
+  400 : #fcb369,
+  500 : #fba64e,
+  600 : #fa9e47,
+  700 : #fa953d,
+  800 : #f98b35,
+  900 : #f87b25,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffdfcc,
+  A700 : #ffcfb2,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$primary-theme: mat-palette($primary);
+$accent-theme: mat-palette($accent);
+$warn-theme: mat-palette($mat-red);
+
+$app-theme: mat-light-theme($primary-theme, $accent-theme, $warn-theme);
+
+@include angular-material-theme($app-theme);
+@include flex-styles;
+@include as-app($app-theme);

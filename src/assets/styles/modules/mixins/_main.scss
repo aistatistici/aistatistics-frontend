@@ -1,0 +1,10 @@
+@mixin as-main($theme) {
+  main {
+    width: 100%;
+  }
+
+  as-main {
+    display: block;
+    height: 100%;
+  }
+}

@@ -14,7 +14,8 @@ export class ProcessFieldComponent implements OnInit {
       {value: "inverse", viewValue: "Inverse"},
       {value: "abs", viewValue: "Absolute Value"},
       {value: "log", viewValue: "Logarithmic Scale"},
-      {value: "min_max_normalization", viewValue: "Min Max Normalization"}
+      {value: "min_max_normalization", viewValue: "Min Max Normalization"},
+      {value: "difference", viewValue: "Time series difference"}
     ];
 
     constructor() {

@@ -1,0 +1,13 @@
+<nav flex="row" flex-align="center">
+  <div class="as-logo" flex="row" flex-justify="center" flex-align="center" (click)="open = !open">
+    <img src="../../../assets/images/logo.png">
+  </div>
+</nav>
+<div flex="row">
+  <div class="as-sidenav" [style.width]="sidenavWidth | async">
+
+  </div>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

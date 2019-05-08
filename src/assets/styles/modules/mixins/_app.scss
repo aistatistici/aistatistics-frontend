@@ -1,0 +1,11 @@
+@mixin as-app($theme) {
+  @include as-header($theme);
+  @include as-footer($theme);
+  @include as-main($theme);
+
+  as-app {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+  }
+}

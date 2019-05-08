@@ -48,6 +48,7 @@ import { ProblemComponent } from './pages/problem/problem.component';
 import { DataComponent } from './pages/data/data.component';
 import { ProjectCardComponent } from './pages/project/project-card/project-card.component';
 import { ProjectDialogComponent } from './pages/project/project-dialog/project-dialog.component';
+import { HeaderComponent } from './common/header/header.component';
 
 
 
@@ -70,7 +71,8 @@ import { ProjectDialogComponent } from './pages/project/project-dialog/project-d
         ProblemComponent,
         DataComponent,
         ProjectCardComponent,
-        ProjectDialogComponent
+        ProjectDialogComponent,
+        HeaderComponent
     ],
     imports: [
         BrowserModule,
